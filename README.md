@@ -11,7 +11,7 @@ Manage images
 
 ```yml
 docker build [options] .
-  -t "app/container_name"    # name
+  -t "achoisy/container_name"    # name
   --build-arg APP_HOME=$APP_HOME    # Set build-time variables
 ```
 
@@ -28,7 +28,7 @@ docker run [options] IMAGE
 #### Example
 
 ```
-$ docker run -it debian:buster /bin/bash
+$ docker run -it achoisy:redis sh
 ```
 Run a command in an `image`.
 
@@ -74,7 +74,7 @@ docker exec [options] CONTAINER COMMAND
 
 ```
 $ docker exec app_web_1 tail logs/development.log
-$ docker exec -t -i app_web_1 rails c
+$ docker exec -it achoisy/redis sh
 ```
 
 Run commands in a `container`.
