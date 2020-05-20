@@ -24,6 +24,18 @@ Create an `image` from a Dockerfile.
 docker run [options] IMAGE
   # see `docker create` for options
 ```
+```yml
+docker run [image id or image tag]
+  # Create and start a container based on the provided image id or tag
+```
+```yml
+docker run [image id or image tag] [cmd]
+  # Create and start a container, but also override the default command
+```
+```yml
+docker run -p [local port]:[docker port] [image id or image tag]
+  # Create and start a container and bind local port to docker port
+```
 
 #### Example
 
@@ -69,6 +81,10 @@ docker exec [options] CONTAINER COMMAND
   -i, --interactive   # stdin
   -t, --tty           # interactive
 ```
+```yml
+docker exec -it [container id] [cmd]
+  # Execute the given command in a running container
+```
 
 #### Example
 
@@ -96,9 +112,9 @@ Start/stop a `container`.
 ### `docker ps`
 
 ```
-$ docker ps
-$ docker ps -a
-$ docker kill $ID
+$ docker ps          # Print out information about all of running containers
+$ docker ps -a       # Print out information about all created containers
+$ docker kill $ID    # 
 ```
 
 Manage `container`s using ps/kill.
@@ -107,7 +123,7 @@ Manage `container`s using ps/kill.
 ### `docker logs`
 
 ```
-$ docker logs $ID
+$ docker logs $ID # Print out logs from given container
 $ docker logs $ID 2>&1 | less
 $ docker logs -f $ID # Follow log output
 ```
