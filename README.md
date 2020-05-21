@@ -177,9 +177,10 @@ Kubectl specific
 ### `kubectl delete pods`
 
 ```yml
-kubectl delete pod [pod_name] # Print out logs from given pod
+kubectl delete pod [pod_name] # Delete pod
+kubectl delete deployment [depl_name] # Delete deployment
 ```
-Deletes the given `pod`
+Deletes the given `pod` or `deployment`
 
 ### `kubectl process config`
 
@@ -192,8 +193,9 @@ Tells kubernetes to process the config
 
 ```yml
 kubectl describe pod [pod_name]
+kubectl describe deployment [depl_name]
 ```
-Print out information about the running pod
+Print out information about the running `pod` or `deployment`
 
 ## Clean up
 
