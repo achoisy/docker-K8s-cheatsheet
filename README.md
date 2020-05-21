@@ -197,6 +197,13 @@ kubectl describe deployment [depl_name]
 ```
 Print out information about the running `pod` or `deployment`
 
+### `kubectl rollout`
+
+```yml
+kubectl rollout restart deployment [depl_name]
+```
+Tells kubernetes to process 
+
 ## Clean up
 
 ### Clean all
