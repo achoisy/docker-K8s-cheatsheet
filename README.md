@@ -1,8 +1,3 @@
----
-title: Docker CLI
-category: Devops
-layout: 2017/sheet
----
 
 Manage images
 -------------
@@ -70,7 +65,6 @@ $ docker create --name app_redis_1 \
   --expose 6379 \
   redis:3.0.2
 ```
-
 Create a `container` from an `image`.
 
 ### `docker exec`
@@ -95,6 +89,13 @@ $ docker exec -it achoisy/redis sh
 
 Run commands in a `container`.
 
+### `kubectl exec`
+
+```yml
+kubectl exec -it [pod_name] [cmd]
+```
+
+Run commands in a running `pod`.
 
 ### `docker start`
 
@@ -116,8 +117,15 @@ $ docker ps          # Print out information about all of running containers
 $ docker ps -a       # Print out information about all created containers
 $ docker kill $ID    # 
 ```
-
 Manage `container`s using ps/kill.
+
+### `kubectl get pods`
+
+```
+kubectl get pods
+```
+
+Information about all running `pods`.
 
 
 ### `docker logs`
@@ -130,6 +138,12 @@ $ docker logs -f $ID # Follow log output
 
 See what's being logged in an `container`.
 
+### `kubectl logs`
+
+```yml
+kubectl logs [pod_name] 
+```
+See what's being logged in an `pod`
 
 Images
 ------
@@ -156,6 +170,30 @@ docker rmi b750fe78269d
 ```
 
 Deletes `image`s.
+
+Kubectl specific
+----------------
+
+### `kubectl delete pods`
+
+```yml
+kubectl delete pod [pod_name] # Print out logs from given pod
+```
+Deletes the given `pod`
+
+### `kubectl process config`
+
+```yml
+kubectl apply -f [config file name]
+```
+Tells kubernetes to process the config
+
+### `kubectl information`
+
+```yml
+kubectl describe pod [pod_name]
+```
+Print out information about the running pod
 
 ## Clean up
 
