@@ -174,7 +174,7 @@ Deletes `image`s.
 Kubectl specific
 ----------------
 
-### `kubectl delete pods`
+### `kubectl delete`
 
 ```yml
 kubectl delete pod [pod_name] # Delete pod
